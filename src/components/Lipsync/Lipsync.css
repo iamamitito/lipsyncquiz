@@ -1,0 +1,9 @@
+.Lipsync.show {
+  visibility: visible;
+}
+.Lipsync.hide {
+  visibility: hidden;
+}
+.Lipsync-queens {
+  display: flex;
+}
