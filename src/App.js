@@ -85,7 +85,7 @@ const App = () => {
           queens={queens}
           nextLipsync={nextLipsync} />
 
-      ) : (<div className=" flex flex-col text-2xl font-semibold w-1/12 m-auto">
+      ) : (<div className=" flex flex-col text-2xl font-semibold  w-1/3 md:w-2/12 xl:w-1/12 m-auto">
         <h1>Score: </h1>
         <span className="bg-white text-pink-500 p-2 rounded shadow">{score}</span>
         <a href="/" className="bg-pink-500 mt-3 p-3 rounded-md focus:outline-none shadow text-base">Play again!</a></div>)}
