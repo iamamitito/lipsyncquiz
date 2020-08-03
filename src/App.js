@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import Lipsync from './components/Lipsync/Lipsync';
 import End from './components/End/End';
+import Nav from './components/Nav/Nav';
+import About from './components/About/About';
 import Spinner from './components/Spinner/Spinner';
+import { Route, Redirect } from 'react-router-dom';
 
 const App = () => {
   const [lipsync, setLipsync] = useState({});
@@ -33,7 +36,7 @@ const App = () => {
     for (let i = start; i <= end; i++) {
 
       // The below lipsync ids are not found, have more than two queens or there's no clear winner
-      while (i === 0 || i === 1 || i === 25 || i === 38 || i === 42 || i === 43 || i === 44 || i === 45 || i === 46 || i === 47 || i === 52 || i === 55 || i === 56 || i === 60 || i === 72 || i === 80 || i === 84 || i === 86 || i === 93 || i === 98 || i === 101 || i === 105 || i === 112 || i === 119 || i === 120 || i === 133 || i === 135 || i === 136 || i === 137 || i === 138 || i === 144 || i === 145 || i === 146 || i === 147 || i === 151 || i === 155 || i === 157 || i === 159 || i === 163) {
+      while (i === 0 || i === 1 || i === 25 || i === 38 || i === 42 || i === 43 || i === 44 || i === 45 || i === 46 || i === 47 || i === 52 || i === 55 || i === 56 || i === 60 || i === 67 || i === 72 || i === 80 || i === 84 || i === 86 || i === 93 || i === 98 || i === 101 || i === 105 || i === 112 || i === 119 || i === 120 || i === 133 || i === 135 || i === 136 || i === 137 || i === 138 || i === 144 || i === 145 || i === 146 || i === 147 || i === 151 || i === 155 || i === 157 || i === 159 || i === 163) {
         i += 1;
       }
       array.push(i);
@@ -53,6 +56,7 @@ const App = () => {
     setLipsync(data);
     setQueens(data.queens);
     setShowAnswers(false);
+    console.log(data.id);
 
   }
   const handleAnswer = (answer) => {
@@ -68,20 +72,28 @@ const App = () => {
   }
 
   return queens.length > 0 ? (
-    <div className="container mt-20 m-auto w-screen text-center">
-      <div className="crown">
-        <i className="fas fa-crown fa-5x my-5"></i>
-      </div>
-      {ids.length > 118 ? (
-        <Lipsync
-          handleAnswer={handleAnswer}
-          showAnswers={showAnswers}
-          lipsync={lipsync}
-          queens={queens}
-          nextLipsync={nextLipsync} />
+    <Fragment>
+      <Nav />
+      <Route path="/lipsyncquiz" exact render={props => (
+        <div className="container mt-20 m-auto w-screen text-center">
+          <div className="crown">
+            <i className="fas fa-crown fa-5x my-5"></i>
+          </div>
+          {ids.length > 118 ? (
+            <Lipsync
+              handleAnswer={handleAnswer}
+              showAnswers={showAnswers}
+              lipsync={lipsync}
+              queens={queens}
+              nextLipsync={nextLipsync} />
 
-      ) : (<End score={score} />)}
-    </div>
+          ) : (<End score={score} />)}
+
+        </div>)} />
+      <Route path="/lipsyncquiz/about" exact component={About} />
+      <Redirect from="/" to="/lipsyncquiz" />
+    </Fragment>
+
   ) : <div className="mt-40"><Spinner /></div>;
 }
 
