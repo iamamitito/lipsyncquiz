@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Lipsync from './components/Lipsync/Lipsync';
+import End from './components/End/End';
 import Spinner from './components/Spinner/Spinner';
-import './App.css';
 
 const App = () => {
   const [lipsync, setLipsync] = useState({});
@@ -12,16 +12,13 @@ const App = () => {
 
 
   useEffect(() => {
-
     const getLipsync = async () => {
       const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${getRandomNumber(1, 24)}`);
       const data = await res.json();
       setLipsync(data);
       setQueens(data.queens);
-
     }
     getLipsync();
-
   }, []);
 
   function getRandomNumber(min, max) {
@@ -45,18 +42,16 @@ const App = () => {
   }
 
   const nextLipsync = async () => {
-    let randomIndex = getRandomNumber(0, ids.length - 1);
-    let randomNumber = ids[randomIndex];
+    const randomIndex = getRandomNumber(0, ids.length - 1);
+    const randomNumber = ids[randomIndex];
 
-
-    let newIds = [...ids];
+    const newIds = [...ids];
     newIds.splice(randomIndex, 1)
     setIds(newIds);
     const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${randomNumber}`);
     const data = await res.json();
     setLipsync(data);
     setQueens(data.queens);
-    console.log(score);
     setShowAnswers(false);
 
   }
@@ -85,10 +80,7 @@ const App = () => {
           queens={queens}
           nextLipsync={nextLipsync} />
 
-      ) : (<div className=" flex flex-col text-2xl font-semibold  w-1/3 md:w-2/12 xl:w-1/12 m-auto">
-        <h1>Score: </h1>
-        <span className="bg-white text-pink-500 p-2 rounded shadow">{score}</span>
-        <a href="/" className="bg-pink-500 mt-3 p-3 rounded-md focus:outline-none shadow text-base">Play again!</a></div>)}
+      ) : (<End score={score} />)}
     </div>
   ) : <div className="mt-40"><Spinner /></div>;
 }
