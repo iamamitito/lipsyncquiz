@@ -3,7 +3,7 @@ import React from 'react';
 const Lipsync = ({ lipsync, queens, handleAnswer, showAnswers, nextLipsync }) => {
 
     return (
-        <div className="lipsync w-11/12 xl:w-2/4 m-auto">
+        <div className="lipsync w-11/12 lg:w-1/2 m-auto">
             <div className="bg-white text-pink-600 p-5 flex flex-col rounded-md shadow-md text-center">
                 <h2 className="text-2xl">{lipsync.name}</h2><small>by {lipsync.artist}</small>
             </div>

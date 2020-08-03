@@ -78,12 +78,19 @@ const App = () => {
         <i className="fas fa-crown fa-5x my-5"></i>
       </div>
       {ids.length > 118 ? (
-        <React.Fragment>
-          <Lipsync handleAnswer={handleAnswer} showAnswers={showAnswers} lipsync={lipsync} queens={queens} nextLipsync={nextLipsync} />
-        </React.Fragment>
-      ) : (<div className=" flex flex-col text-2xl font-semibold w-1/12 m-auto"><h1>Score: </h1><span className="bg-white text-pink-500 p-2 rounded shadow ">{score}</span></div>)}
+        <Lipsync
+          handleAnswer={handleAnswer}
+          showAnswers={showAnswers}
+          lipsync={lipsync}
+          queens={queens}
+          nextLipsync={nextLipsync} />
+
+      ) : (<div className=" flex flex-col text-2xl font-semibold w-1/12 m-auto">
+        <h1>Score: </h1>
+        <span className="bg-white text-pink-500 p-2 rounded shadow">{score}</span>
+        <a href="/" className="bg-pink-500 mt-3 p-3 rounded-md focus:outline-none shadow text-base">Play again!</a></div>)}
     </div>
-  ) : <div className="flex justify-center items-center h-screen"><Spinner /></div>;
+  ) : <div className="mt-40"><Spinner /></div>;
 }
 
 export default App;
