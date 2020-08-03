@@ -1,37 +1,28 @@
-import React, { useState } from 'react';
-import Queen from './Queen/Queen';
-import './Lipsync.css';
+import React from 'react';
 
-const Lipsync = () => {
-    const [lipsync, setLipsync] = useState({});
-    const [queens, setQueens] = useState([]);
-    const [showLipsync, setShowLipsync] = useState(false);
+const Lipsync = ({ lipsync, queens, handleAnswer, showAnswers, nextLipsync }) => {
 
-
-    const getLipsync = async () => {
-        const random = Math.floor(Math.random() * 171);
-        const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${random}`);
-        const data = await res.json();
-        if (data.name) {
-            setLipsync(data);
-            setQueens(data.queens);
-            setShowLipsync(true);
-        }
-    }
     return (
-        <React.Fragment>
-            <div onClick={getLipsync}>Get lipsync</div>
-            <div className={showLipsync ? 'Lipsync show' : 'Lipsync hide'}>
-                <div className="Lipsync-info">
-                    <h2>{lipsync.name} by {lipsync.artist}</h2>
-                    <div className="Lipsync-queens">
-                        {queens.map(queen => {
-                            return <Queen key={queen.id} queen={queen} />
-                        })}
-                    </div>
-                </div>
+        <div className="lipsync w-11/12 xl:w-2/4 m-auto">
+            <div className="bg-white text-pink-600 p-5 flex flex-col rounded-md shadow-md text-center">
+                <h2 className="text-2xl">{lipsync.name}</h2><small>by {lipsync.artist}</small>
             </div>
-        </React.Fragment>
+
+            <div className="grid grid-cols-2 gap-6 mt-6">
+                {queens.map(queen => {
+                    const textColor = showAnswers ? queen.won ? 'text-green-500' : 'text-red-500' : 'text-pink-600';
+                    return (<button
+                        onClick={() => handleAnswer(queen.won)}
+                        className={`bg-white ${textColor} p-4 rounded-md focus:outline-none shadow`}
+                        key={queen.id}>
+                        {queen.name}</button>)
+                })
+                }
+            </div>
+            {showAnswers && (
+                <button className="float-right bg-pink-500  mt-3 p-3 rounded-md focus:outline-none shadow" onClick={nextLipsync} >Next lipsync <i className="fas fa-chevron-right"></i></button>
+            )}
+        </div>
     );
 }
 
