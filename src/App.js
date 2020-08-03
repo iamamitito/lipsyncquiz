@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
 
     const getLipsync = async () => {
-      const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${getRandomNumber(1, 43)}`);
+      const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${getRandomNumber(1, 24)}`);
       const data = await res.json();
       setLipsync(data);
       setQueens(data.queens);
