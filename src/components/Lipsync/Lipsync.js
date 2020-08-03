@@ -20,7 +20,7 @@ const Lipsync = ({ lipsync, queens, handleAnswer, showAnswers, nextLipsync }) =>
                 }
             </div>
             {showAnswers && (
-                <button className="float-right bg-pink-500  mt-3 p-3 rounded-md focus:outline-none shadow" onClick={nextLipsync} >Next lipsync <i className="fas fa-chevron-right"></i></button>
+                <button className="float-right bg-pink-500  mt-3 p-3 rounded-md focus:outline-none shadow" onClick={nextLipsync} >Continue <i className="fas fa-chevron-right"></i></button>
             )}
         </div>
     );

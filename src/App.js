@@ -4,7 +4,7 @@ import End from './components/End/End';
 import Nav from './components/Nav/Nav';
 import About from './components/About/About';
 import Spinner from './components/Spinner/Spinner';
-import { Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 const App = () => {
   const [lipsync, setLipsync] = useState({});
@@ -74,7 +74,7 @@ const App = () => {
   return queens.length > 0 ? (
     <Fragment>
       <Nav />
-      <Route path="/lipsyncquiz" exact render={props => (
+      <Route path="/" exact render={props => (
         <div className="container mt-20 m-auto w-screen text-center">
           <div className="crown">
             <i className="fas fa-crown fa-5x my-5"></i>
@@ -90,8 +90,7 @@ const App = () => {
           ) : (<End score={score} />)}
 
         </div>)} />
-      <Route path="/lipsyncquiz/about" exact component={About} />
-      <Redirect from="/" to="/lipsyncquiz" />
+      <Route path="/about" exact component={About} />
     </Fragment>
 
   ) : <div className="mt-40"><Spinner /></div>;
