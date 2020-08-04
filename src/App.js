@@ -13,15 +13,9 @@ const App = () => {
   const [score, setScore] = useState(0);
   const [showAnswers, setShowAnswers] = useState(false);
 
-
   useEffect(() => {
-    const getLipsync = async () => {
-      const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${getRandomNumber(1, 24)}`);
-      const data = await res.json();
-      setLipsync(data);
-      setQueens(data.queens);
-    }
     getLipsync();
+    //eslint-disable-next-line
   }, []);
 
   function getRandomNumber(min, max) {
@@ -36,7 +30,7 @@ const App = () => {
     for (let i = start; i <= end; i++) {
 
       // The below lipsync ids are not found, have more than two queens or there's no clear winner
-      while (i === 0 || i === 1 || i === 25 || i === 38 || i === 42 || i === 43 || i === 44 || i === 45 || i === 46 || i === 47 || i === 52 || i === 55 || i === 56 || i === 60 || i === 67 || i === 72 || i === 80 || i === 84 || i === 86 || i === 93 || i === 98 || i === 101 || i === 105 || i === 112 || i === 119 || i === 120 || i === 133 || i === 135 || i === 136 || i === 137 || i === 138 || i === 144 || i === 145 || i === 146 || i === 147 || i === 151 || i === 155 || i === 157 || i === 159 || i === 163) {
+      while (i === 0 || i === 25 || i === 38 || i === 42 || i === 43 || i === 44 || i === 45 || i === 46 || i === 47 || i === 52 || i === 55 || i === 56 || i === 60 || i === 67 || i === 72 || i === 80 || i === 84 || i === 86 || i === 93 || i === 98 || i === 101 || i === 105 || i === 112 || i === 119 || i === 120 || i === 133 || i === 135 || i === 136 || i === 137 || i === 138 || i === 144 || i === 145 || i === 146 || i === 147 || i === 151 || i === 155 || i === 157 || i === 159 || i === 163) {
         i += 1;
       }
       array.push(i);
@@ -44,7 +38,7 @@ const App = () => {
     return array;
   }
 
-  const nextLipsync = async () => {
+  const getLipsync = async () => {
     const randomIndex = getRandomNumber(0, ids.length - 1);
     const randomNumber = ids[randomIndex];
 
@@ -56,19 +50,16 @@ const App = () => {
     setLipsync(data);
     setQueens(data.queens);
     setShowAnswers(false);
-    console.log(data.id);
-
   }
   const handleAnswer = (answer) => {
     // This prevents increasing score before next lipsync
     if (!showAnswers) {
       if (answer) {
         //Increase the score
-        setScore(score + 1);
+        setScore(score + 10);
       }
     }
     setShowAnswers(true);
-
   }
 
   return queens.length > 0 ? (
@@ -79,20 +70,19 @@ const App = () => {
           <div className="crown">
             <i className="fas fa-crown fa-5x my-5"></i>
           </div>
-          {ids.length > 118 ? (
+          {ids.length > 122 ? (
             <Lipsync
               handleAnswer={handleAnswer}
               showAnswers={showAnswers}
               lipsync={lipsync}
               queens={queens}
-              nextLipsync={nextLipsync} />
+              nextLipsync={getLipsync} />
 
           ) : (<End score={score} />)}
 
         </div>)} />
       <Route path="/about" exact component={About} />
     </Fragment>
-
   ) : <div className="mt-40"><Spinner /></div>;
 }
 

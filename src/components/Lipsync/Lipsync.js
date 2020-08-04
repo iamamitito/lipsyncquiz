@@ -13,7 +13,7 @@ const Lipsync = ({ lipsync, queens, handleAnswer, showAnswers, nextLipsync }) =>
                     const textColor = showAnswers ? queen.won ? 'text-green-500' : 'text-red-500' : 'text-pink-600';
                     return (<button
                         onClick={() => handleAnswer(queen.won)}
-                        className={`bg-white ${textColor} p-4 rounded-md focus:outline-none shadow`}
+                        className={`bg-white ${textColor} p-4 rounded-md focus:outline-none shadow-md`}
                         key={queen.id}>
                         {queen.name}</button>)
                 })
