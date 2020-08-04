@@ -4,9 +4,9 @@ import { NavLink } from 'react-router-dom';
 const Nav = () => {
     return (
         <nav>
-            <ul className="flex float-right mt-5">
-                <li className="mr-6"><NavLink to='/'>Home</NavLink></li>
-                <li className="mr-6"><NavLink to='/about'>About</NavLink></li>
+            <ul className="flex float-right mt-5 text-pink-300">
+                <li><NavLink to='/'><i className="fas fa-crown fa-2x mr-5 hover:text-pink-200"></i></NavLink></li>
+                <li><NavLink to='/about'><i className="fas fa-info fa-2x mr-5 hover:text-pink-200"></i></NavLink></li>
             </ul>
         </nav>
     )

@@ -4,7 +4,7 @@ const About = () => {
     return (
         <div className="container mt-20 m-auto w-screen text-center p-4 leading-loose  text-gray-100">
             <div className="header tracking-wide">
-                <i className="fas fa-crown fa-2x "></i>
+                <i className="fas fa-info fa-3x text-pink-300"></i>
                 <h1 className="text-3xl font-bold my-2">About this app</h1>
             </div>
             <div className="info font-light tracking-wider">
@@ -16,7 +16,7 @@ const About = () => {
 
             </div>
 
-            <small className="text-pink-600">&copy;iamamitito</small>
+            <small className="text-pink-600 tracking-wide">&copy;iamamitito</small>
         </div>
     )
 }

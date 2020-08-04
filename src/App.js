@@ -68,7 +68,7 @@ const App = () => {
       <Route path="/" exact render={props => (
         <div className="container mt-20 m-auto w-screen text-center">
           <div className="crown">
-            <i className="fas fa-crown fa-5x my-5"></i>
+            <i className="fas fa-crown fa-5x my-5 text-pink-300"></i>
           </div>
           {ids.length > 122 ? (
             <Lipsync
