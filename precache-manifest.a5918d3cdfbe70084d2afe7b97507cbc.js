@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "68345d77253fa885f725720ca4baa4cd",
+    "revision": "1fef6a6061b27962167ef84b6c81e0b7",
     "url": "/lipsyncquiz/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/lipsyncquiz/static/js/2.5d7a1127.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "98db90e6c1a0b90a8a8e",
-    "url": "/lipsyncquiz/static/js/main.6aece20a.chunk.js"
+    "revision": "58003996f8ab7c469b92",
+    "url": "/lipsyncquiz/static/js/main.6dc2b7d7.chunk.js"
   },
   {
     "revision": "98d0b0bd7160fbffbb7e",

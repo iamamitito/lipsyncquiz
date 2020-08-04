@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/lipsyncquiz/static/js/main.6aece20a.chunk.js",
-    "main.js.map": "/lipsyncquiz/static/js/main.6aece20a.chunk.js.map",
+    "main.js": "/lipsyncquiz/static/js/main.6dc2b7d7.chunk.js",
+    "main.js.map": "/lipsyncquiz/static/js/main.6dc2b7d7.chunk.js.map",
     "runtime-main.js": "/lipsyncquiz/static/js/runtime-main.13a0ca96.js",
     "runtime-main.js.map": "/lipsyncquiz/static/js/runtime-main.13a0ca96.js.map",
     "static/js/2.5d7a1127.chunk.js": "/lipsyncquiz/static/js/2.5d7a1127.chunk.js",
     "static/js/2.5d7a1127.chunk.js.map": "/lipsyncquiz/static/js/2.5d7a1127.chunk.js.map",
     "index.html": "/lipsyncquiz/index.html",
-    "precache-manifest.9ebff871fe45287d1bbd6cdd505bea97.js": "/lipsyncquiz/precache-manifest.9ebff871fe45287d1bbd6cdd505bea97.js",
+    "precache-manifest.a5918d3cdfbe70084d2afe7b97507cbc.js": "/lipsyncquiz/precache-manifest.a5918d3cdfbe70084d2afe7b97507cbc.js",
     "service-worker.js": "/lipsyncquiz/service-worker.js",
     "static/js/2.5d7a1127.chunk.js.LICENSE.txt": "/lipsyncquiz/static/js/2.5d7a1127.chunk.js.LICENSE.txt",
     "static/media/spinner.gif": "/lipsyncquiz/static/media/spinner.9b4f9f6a.gif"
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.13a0ca96.js",
     "static/js/2.5d7a1127.chunk.js",
-    "static/js/main.6aece20a.chunk.js"
+    "static/js/main.6dc2b7d7.chunk.js"
   ]
 }
