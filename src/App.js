@@ -45,7 +45,7 @@ const App = () => {
     const newIds = [...ids];
     newIds.splice(randomIndex, 1)
     setIds(newIds);
-    const res = await fetch(`http://www.nokeynoshade.party/api/lipsyncs/${randomNumber}`);
+    const res = await fetch(`https://www.nokeynoshade.party/api/lipsyncs/${randomNumber}`);
     const data = await res.json();
     setLipsync(data);
     setQueens(data.queens);
