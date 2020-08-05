@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/lipsyncquiz/precache-manifest.1339406d17e03a1adc5f89fc0883a680.js"
+  "/lipsyncquiz/precache-manifest.152645411e2e254ed90a4037e099b84c.js"
 );
 
 self.addEventListener('message', (event) => {
