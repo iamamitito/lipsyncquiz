@@ -51,7 +51,6 @@ const App = () => {
     setLipsync(data);
     setQueens(data.queens);
     setShowAnswers(false);
-    console.log(score);
   }
   const handleAnswer = (answer) => {
     // This prevents increasing score before next lipsync
