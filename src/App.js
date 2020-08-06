@@ -51,6 +51,7 @@ const App = () => {
     setLipsync(data);
     setQueens(data.queens);
     setShowAnswers(false);
+    console.log(score);
   }
   const handleAnswer = (answer) => {
     // This prevents increasing score before next lipsync
@@ -71,7 +72,7 @@ const App = () => {
           <div className="crown">
             <i className="fas fa-crown fa-5x my-5 text-pink-300"></i>
           </div>
-          {ids.length > 122 ? (
+          {ids.length > 119 ? (
             <Lipsync
               handleAnswer={handleAnswer}
               showAnswers={showAnswers}
